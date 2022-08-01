@@ -1,0 +1,83 @@
+﻿@model WebApplication2.Models.CustomersDetail
+
+@{
+    ViewData["Title"] = "AddCustomer";
+}
+<div class="container">
+    <div class="card shadow-sm mb-5 bg-white rounded">
+        <div class="card-header">
+            <h3>Add New Detail</h3>
+        </div>
+        <div class="card-body">
+
+            <form asp-action="AddCustomer">
+                <div class="row">
+                    <div class="col-md-6">
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="CustomerName" class="control-label"></label>
+                            <input asp-for="CustomerName" class="form-control" />
+                            <span asp-validation-for="CustomerName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="AddressLine1" class="control-label"></label>
+                            <input asp-for="AddressLine1" class="form-control" />
+                            <span asp-validation-for="AddressLine1" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="AddressLine2" class="control-label"></label>
+                            <input asp-for="AddressLine2" class="form-control" />
+                            <span asp-validation-for="AddressLine2" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Town" class="control-label"></label>
+                            <input asp-for="Town" class="form-control" />
+                            <span asp-validation-for="Town" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="County" class="control-label"></label>
+                            <input asp-for="County" class="form-control" />
+                            <span asp-validation-for="County" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Postcode" class="control-label"></label>
+                            <input asp-for="Postcode" class="form-control" />
+                            <span asp-validation-for="Postcode" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ContactEmail" class="control-label"></label>
+                            <input asp-for="ContactEmail" class="form-control" />
+                            <span asp-validation-for="ContactEmail" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ContactPhoneNumber" class="control-label"></label>
+                            <input asp-for="ContactPhoneNumber" class="form-control" />
+                            <span asp-validation-for="ContactPhoneNumber" class="text-danger"></span>
+                        </div>
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+
+                                <input data-toggle="toggle" data-onstyle="danger" class="form-check-input" asp-for="Status" /> @Html.DisplayNameFor(model => model.Status)
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div>
+                <a asp-action="Index" class="btn btn-primary">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
